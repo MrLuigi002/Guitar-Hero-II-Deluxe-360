@@ -16,10 +16,7 @@
    (memcard_flow_entered FALSE)
    (retain_last_focus FALSE)
    (enter
-      {campaign set_profile_slot 0}
       {set $main_entered TRUE}
-      {set $cheat_enabled_unlock_all 1}
-      {campaign set_all_access 1}
       {$this reset_player_settings}
 	  {set $dontreset TRUE}
       {if
@@ -39,10 +36,21 @@
       {switch
          $component
          (main_career.btn
-            ;{ui goto_screen nameprof_screen}
+            {gamecfg set mode career}
+            {if_else
+               {>
+                  {campaign num_profiles}
+                  0}
+               {ui goto_screen chooseprof_screen}
+               {do
+                  {nameprof_screen set back_screen main_screen}
+                  {nameprof_screen set is_editing FALSE}
+                  {nameprof_screen set profile_slot 0}
+                  {nameprof_screen set next_screen main_screen}
+                  {ui goto_screen nameprof_screen}}}
 			)
 		 (main_quickspin.btn
-            {gamecfg set mode career}
+		 {gamecfg set mode career}
             {ui goto_screen sel_song_screen})
          (main_multiplayer.btn
             {ui goto_screen multi_controller_select_screen})
