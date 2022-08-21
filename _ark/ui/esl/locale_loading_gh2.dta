@@ -33,7 +33,7 @@
    {if_else $egg5
       "Si alguna vez te encuentras carpetas sospechosa pertenecientes a Harmonix, llama a LocalH inmediatamente."
       "Se tarda MUCHO en conducir la caravana a través de Nebraska."})
-(comedy_tip_gh2_8 "Si tienes un equipo de carretera, se llama \qtransportar\q equipamiento. Si no, se llama \qsllevar a rastras.\q")
+(comedy_tip_gh2_8 "Si tienes un equipo de carretera, se llama \qtransportar\q equipamiento. Si no, se llama \qllevar a rastras.\q")
 (comedy_tip_gh2_9
    {if_else $egg5
       "Maldita sea Harmonix, ¿por qué hardcodeaste algunas de estas cosas?"
